@@ -62,8 +62,6 @@ protected
   end
 
   def validatable_value(value)
-    return value if value.is_a?(String)
-
     ::ActiveSupport::JSON.encode(value)
   end
 
