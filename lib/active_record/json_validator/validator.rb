@@ -38,7 +38,6 @@ protected
         define_method "#{attribute}=" do |args|
           begin
             @#{attribute}_invalid_json = nil
-            args = ::ActiveSupport::JSON.decode(args) if args.is_a?(::String)
             super(args)
           rescue ActiveSupport::JSON.parse_error
             @#{attribute}_invalid_json = args
